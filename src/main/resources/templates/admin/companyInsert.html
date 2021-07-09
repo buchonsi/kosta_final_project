@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://ultraq.net.nz/thymelaf/layout"
-	layout:decorate="~{/layout/layoutadmin}">
+	layout:decorate="~{layout/layoutadmin}">
 <head>
 <meta charset="UTF-8">
 <title>회사등록</title>
@@ -10,12 +10,14 @@
 
 	<div class="panel panel-default" layout:fragment="content1">
 
-
-   <div id="menuTitleIco"><span class="glyphicon glyphicon-user"></span></div><span id="menuTitle">회사 등록</span>
+    <div id="menuTitleIco">
+    <span class="glyphicon glyphicon-user"></span>
+    </div>
+    <span id="menuTitle">회사 등록</span>
+   
 	<!-- 메뉴분리용 div -->
 		<div id="divContentline"></div>
 	<!-- 메뉴분리용 div 끝-->
-
 
 	<form th:action="@{/admin/companyInsert}" method="post">
 		<div class="form-group">

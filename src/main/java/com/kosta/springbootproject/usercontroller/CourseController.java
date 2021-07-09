@@ -51,18 +51,20 @@ public class CourseController {
 	}
 	
 	//과목
-	@GetMapping("/courseInfo/{subjectNo}")	//주소 네이밍 어떻게 할지
+	@GetMapping("/courseInfo/{subjectNo}")
 	public ModelAndView searchLecture(@PathVariable Long subjectNo) {
-		ModelAndView mv = new ModelAndView("/user/userCourse");
+		ModelAndView mv = new ModelAndView();
 		List<Object[]> CourseList = cservice.findCourseWithLecture(subjectNo); 
+		mv.addObject("subject",cservice.findSubjectById(subjectNo));
 		mv.addObject("CourseList", CourseList);
+		mv.setViewName("user/userCourse");
 		return mv;
 	}
 	
 	//과목 디테일
 	@GetMapping("/courseInfo/{courseNo}/{lectureYear}")
 	public ModelAndView searchCourseInfo(@PathVariable Course courseNo, @PathVariable int lectureYear) {
-		ModelAndView mv = new ModelAndView("/user/userCourseInfo");
+		ModelAndView mv = new ModelAndView("user/userCourseInfo");
 		Lecture lecture = cservice.findLecturByCourse(courseNo,lectureYear);
 		List<Classes> classList = cservice.findClassByLecture(lecture);
 		mv.addObject("lecture", lecture);
@@ -73,7 +75,7 @@ public class CourseController {
 	//강의신청 1단계(신청하기)
 	@GetMapping("/course/enroll/{classNo}")
 	public ModelAndView searchEnroll(@PathVariable Long classNo) {
-		ModelAndView mv = new ModelAndView("/user/userEnroll");
+		ModelAndView mv = new ModelAndView("user/userEnroll");
 		Classes classInfo = cservice.findClassByClassNO(classNo);
 		mv.addObject("class",classInfo);
 		return mv;
@@ -85,37 +87,31 @@ public class CourseController {
 		ModelAndView mv;
 		//id체크
 		//id있으면
-		mv = new ModelAndView("/user/userEnrollDetail");
+		mv = new ModelAndView("user/userEnrollDetail");
 		Classes classInfo = cservice.findClassByClassNO(classNo);
 		mv.addObject("class",classInfo);
-		//id로 유저찾기 >>repo에서 유저정보 찾아서 뿌리기 밑에꺼 시큐리티만들어지면 바꿔야함
-		//Principal principal을 매개변수로 받아서 정보 가져오면 된다고 함
+		
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		UserDetails userDetails = (UserDetails)principal;
 		String userId = userDetails.getUsername();
 		Users userInfo = cservice.findUserByUserID(userId);
 		mv.addObject("user",userInfo);
-		//mv.addObject("userNo",userNo);
-		//id 없으면
-		//mv = new ModelAndView("/user/login");
 		return mv;
 	}
 	
 	@PostMapping("/course/enroll/info")
 	public String insertClassHistory(ClassHistory ch) {
-		//System.out.println(ch.getUser());
 		Boolean check = cservice.updateClassHistory(ch);
 		if(!check) {
-			//주소 변경 고려(나중에 수강신청 이미 했다고 메세지 창 or 다른 페이지) 
 			return "redirect:/course/enroll/info/"+ch.getClasses().getClassNo();
 		}
-		return "/user/userEnrollSuccess";
+		return "user/userEnrollSuccess";
 	}
 	
 	@GetMapping("/user/userEnrollSidebar")
 	public String enrollSidebar(Model model,Long classNo) {
 		Classes classInfo = cservice.findClassByClassNO(classNo);
 		model.addAttribute("class",classInfo);
-		return "/user/userEnrollSidebar";
+		return "user/userEnrollSidebar";
 	}
 }

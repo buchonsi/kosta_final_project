@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://ultraq.net.nz/thymelaf/layout"
-	layout:decorate="~{/layout/layoutadmin}">
+	layout:decorate="~{layout/layoutadmin}">
 <head>
 <meta charset="UTF-8">
 <title>메인</title>
@@ -44,8 +44,15 @@
   color :grey;
   font-size: 25px;
 }
+#mainView0ContentTitlte1{
+  margin-top : 18px;
+  margin-bottom : 0px;
+  text-align: center;
+  font-size: 23px;
+  color : white;
+}
 
-#mainView0ContentTitlte1, #mainView0ContentTitlte2,#mainView0ContentTitlte3{
+#mainView0ContentTitlte2,#mainView0ContentTitlte3{
   margin-left : 10px;
   margin-top : 8px;
   margin-bottom : 0px;
@@ -129,11 +136,19 @@
   float :right;
 }
 
+#countTitle0{
+  margin-top:60px;
+  font-size: 25px;
+  color: grey;
+  text-align: center;
+}
+
 #countTitle{
-  margin-top:18px;
-  margin-left: 16px;
+  margin-top : 18px;
+  text-align : left;
   font-size: 18px;
   color: grey;
+  margin-left : 20px;
 }
 
 #contentRight1 span{
@@ -202,13 +217,34 @@
   border-radius: 5px;
   }
   
+#content2Right p{
+ font-size: 20px; 
+ color : grey;
+ margin-top: 10px;
+ margin-left: 10px;
+}
+
+#content2Right td, #content2Right th{
+  font-size: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+table.dataTable thead th, table.dataTable thead td{
+border-bottom : 0px !important;
+}
+
+table.dataTable{
+border-collapse : collapse !important;
+}
+  
 .twitter-timeline{
   float : left;
   width : 100%;
   height : 100% !important;
   }
 
-#contentLeft div{     /* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+#contentLeft div{
   float : left;
   width : 160px;
   height : 160px;
@@ -240,10 +276,16 @@
   margin: 10px;
   text-align: center;
 }
-
 </style>
+
 <script>
 $(function() {
+	
+	$(".dataTables_filter").remove();
+    $(".dataTables_length").remove();
+    $(".dataTables_info").remove();
+    $("#DataTables_Table_0_paginate").remove();
+    $("#DataTables_Table_1_paginate").remove();
 
 	  var usercount = '[[${usercount}]]';
 	  var companycount = '[[${companycount}]]';
@@ -324,7 +366,7 @@ $(function() {
 					<span class="glyphicon glyphicon-list-alt" onclick="location.href='/admin/adminList';"></span>
 					<p>직원주소록</p>
 				</div>
-				<div id="contentLeft1" onclick="location.href='/user/userMain';">
+				<div id="contentLeft1" onclick="location.href='/logout';">
 					<img src="/img/kostaEduLogo.png">
 					<p>코스타에듀</p>
 				</div>
@@ -340,9 +382,7 @@ $(function() {
 
 			<div id="contentRight">
 				<div id="contentRight1">
-					<p id="countTitle">
-						<span class="glyphicon glyphicon-education"></span>KOSTA회원
-					</p>
+					<p id="countTitle0">KOSTA회원</p>
 					<li class="count4"></li>
 					
 				</div>
@@ -374,37 +414,49 @@ $(function() {
 				</div>
 				<div id="content2Right">
 		
-		
-		               <table class="table table-striped table-bordered table-hover">
+					<p>개강임박강의</p>
+
+		               <table>
 		                  <thead>
 		                     <tr>
 		                        <th>개강예정일</th>
 		                        <th>강의명</th>
+		                        <th>강사명</th>
+		                        <th>상태</th>
 		                     </tr>
 		                  </thead>
 		                  <tbody>
 		                     <tr th:each="classes:${openExpectedList}">
 		                        <td th:text="${classes.classOpenDate}">개강예정일</td>
 		                        <td th:text="${classes.lecture.course.courseName}">강의명</td>
+		                        <td th:text="${classes.teacher.teacherName}">강사명</td>
 		                        <td th:if="${#strings.toString(classes.classState)}=='APPLY'" th:text="수강신청">상태</td>
 		                        <td th:if="${#strings.toString(classes.classState)}=='END'" th:text="마감">상태</td>
 		                        <td th:if="${#strings.toString(classes.classState)}=='CLOSE'" th:text="종강">상태</td>
 		                        <td th:if="${#strings.toString(classes.classState)}=='OPENREADY'" th:text="개설예정">상태</td>   
 		                     </tr>
 		                  </tbody>
-		               </table>
-		               
-		               <table class="table table-striped table-bordered table-hover">
+						</table>
+
+	<!-- 메뉴분리용 div -->
+		<div id="divContentline"></div>
+	<!-- 메뉴분리용 div 끝-->
+				<p>종강예정강의</p>
+	
+						<table>
 		                  <thead>
 		                     <tr>
 		                        <th>종강예정일</th>
 		                        <th>강의명</th>
+		                        <th>강사명</th>
+		                        <th>상태</th>
 		                     </tr>
 		                  </thead>
 		                  <tbody>
 		                     <tr th:each="classes:${closeExpectedList}">
 		                        <td th:text="${classes.classCloseDate}">종강예정일</td>
 		                        <td th:text="${classes.lecture.course.courseName}">강의명</td>
+		                        <td th:text="${classes.teacher.teacherName}">강사명</td>
 		                        <td th:if="${#strings.toString(classes.classState)}=='APPLY'" th:text="수강신청">상태</td>
 		                        <td th:if="${#strings.toString(classes.classState)}=='END'" th:text="마감">상태</td>
 		                        <td th:if="${#strings.toString(classes.classState)}=='CLOSE'" th:text="종강">상태</td>
@@ -412,13 +464,10 @@ $(function() {
 		                     </tr>
 		                  </tbody>
 		               </table>
-		
 				</div>
 			</div>
-
 		</div>
 	</div>
-
 
 </body>
 </html>

@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kosta.springbootproject.model.ClassHistory;
-import com.kosta.springbootproject.model.ClassHistoryEnumType;
 import com.kosta.springbootproject.model.ClassStateEnumType;
 import com.kosta.springbootproject.model.Classes;
 import com.kosta.springbootproject.model.Course;
@@ -45,13 +44,14 @@ public class CourseService {
 	public List<Trainee> findTraineeAll() {
 		return (List<Trainee>)traineeRepo.findAll();
 	}
+	
 	public List<Subject> findSubjectByTraineeNo(Long traineeNo) {
 		Trainee trainee = Trainee.builder()
 				.traineeNo(traineeNo)
 				.build();
-		 
 		return subjectRepo.findByTraineeOrderBySubPriorityAsc(trainee);
 	}
+	
 	public Subject findSubjectById(Long subjectId) {
 		Subject subject = subjectRepo.findById(subjectId).get();
 		return subject;
