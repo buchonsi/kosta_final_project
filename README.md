@@ -12,8 +12,8 @@
 * 배포 : AWS (Ec2, RDS)
 ## 목차
 1. 관리자 페이지
-2. <img scr="https://user-images.githubusercontent.com/73854927/125059500-59e1c400-e0e6-11eb-94b2-fafc3ebfb2fa.png" width: 150px; height:100px;>
-3. 사용자 페이지
+<img scr="https://user-images.githubusercontent.com/73854927/125059500-59e1c400-e0e6-11eb-94b2-fafc3ebfb2fa.png" width: 150px; height:100px;>
+2. 사용자 페이지
 
 ## 관리자페이지 기능
 * 메타 데이터 등록, 조회, 삭제
