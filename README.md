@@ -23,10 +23,10 @@
 * 엑셀 변환 기능
 * 테이블 정렬 기능
 <div>
-<img src="https://user-images.githubusercontent.com/73854927/125059490-58b09700-e0e6-11eb-8c99-ec3a196c557f.png" width="400px" height="150px" align="left" />
-<img src="https://user-images.githubusercontent.com/73854927/125059497-59e1c400-e0e6-11eb-8919-2ef86424c05e.png" width="400px" height="150px" align="left"/>
+<img src="https://user-images.githubusercontent.com/73854927/125059490-58b09700-e0e6-11eb-8c99-ec3a196c557f.png" width="350px" height="150px" align="left" />
+<img src="https://user-images.githubusercontent.com/73854927/125059497-59e1c400-e0e6-11eb-8919-2ef86424c05e.png" width="350px" height="150px" align="left"/>
 </div>
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
  
   
 ## 사용자페이지 기능
@@ -36,8 +36,8 @@
 * 수강 신청기능,
 * 수업 검색 기능,
 <div>
-<img src="https://user-images.githubusercontent.com/73854927/125059513-5bab8780-e0e6-11eb-8cf5-74b3d4c87c50.png" width="400px" height="150px" align="left" />
-<img src="https://user-images.githubusercontent.com/73854927/125059523-5d754b00-e0e6-11eb-80c6-e5e6316752fb.png" width="400px" height="150px" align="left"/>
-<img src="https://user-images.githubusercontent.com/73854927/125059501-5a7a5a80-e0e6-11eb-8cb1-8d8f065025c8.png" width="400px" height="150px" align="left"/>
-<img src="https://user-images.githubusercontent.com/73854927/125059509-5b12f100-e0e6-11eb-89d6-9277a1c3bfa1.png" width="400px" height="150px" align="left"/>  
+<img src="https://user-images.githubusercontent.com/73854927/125059513-5bab8780-e0e6-11eb-8cf5-74b3d4c87c50.png" width="350px" height="150px" align="left" />
+<img src="https://user-images.githubusercontent.com/73854927/125059523-5d754b00-e0e6-11eb-80c6-e5e6316752fb.png" width="350px" height="150px" align="left"/>
+<img src="https://user-images.githubusercontent.com/73854927/125059501-5a7a5a80-e0e6-11eb-8cb1-8d8f065025c8.png" width="350px" height="150px" align="left"/>
+<img src="https://user-images.githubusercontent.com/73854927/125059509-5b12f100-e0e6-11eb-89d6-9277a1c3bfa1.png" width="350px" height="150px" align="left"/>  
 </div>
