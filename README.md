@@ -24,29 +24,35 @@
 ## 개인 작업 부분 (소스 링크 - 윤종무)
 
 <p> UserController 부분 </p>
+
 * [CourseController](https://github.com/buchonsi/kosta_final_project/blob/master/src/main/java/com/kosta/springbootproject/usercontroller/CourseController.java)
 * [UserController](https://github.com/buchonsi/kosta_final_project/blob/master/src/main/java/com/kosta/springbootproject/usercontroller/UserController.java)
-* 
+ 
 <p> UserService 부분 </p>
+
 * [CourseService](https://github.com/buchonsi/kosta_final_project/blob/master/src/main/java/com/kosta/springbootproject/userservice/CourseService.java)
 * [EmailService](https://github.com/buchonsi/kosta_final_project/blob/master/src/main/java/com/kosta/springbootproject/userservice/EmailService.java)
 * [userService](https://github.com/buchonsi/kosta_final_project/blob/master/src/main/java/com/kosta/springbootproject/userservice/UserPageUserService.java)
 
 <p> UserRepository 부분 </p>
+
 * [ClassHistoryRepository](https://github.com/buchonsi/kosta_final_project/blob/master/src/main/java/com/kosta/springbootproject/persistence/ClassHistoryRepository.java)
 * [CourseRepository](https://github.com/buchonsi/kosta_final_project/blob/master/src/main/java/com/kosta/springbootproject/persistence/CourseRepository.java)
 * [UserRepository](https://github.com/buchonsi/kosta_final_project/blob/master/src/main/java/com/kosta/springbootproject/persistence/UserRepository.java)
 
 <p> Vo 부분 </p>
+
 * [Vo](https://github.com/buchonsi/kosta_final_project/tree/master/src/main/java/com/kosta/springbootproject/model)
 
 <p> View 부분 </p>
+
 * [layoutUserPage](https://github.com/buchonsi/kosta_final_project/blob/master/src/main/resources/templates/layout/layoutUser.html)
 * [Header,Footer](https://github.com/buchonsi/kosta_final_project/tree/master/src/main/resources/templates/fragments)
 * [UserView](https://github.com/buchonsi/kosta_final_project/tree/master/src/main/resources/templates/user)
 * [UserView](https://github.com/buchonsi/kosta_final_project/tree/master/src/main/resources/templates/user)
 
-<javaScript 부분>
+<p> javaScript 부분 </p>
+
 * [우편API](https://github.com/buchonsi/kosta_final_project/blob/master/src/main/resources/static/js/addressPop.js)
 * [회원가입 인증관련](https://github.com/buchonsi/kosta_final_project/blob/master/src/main/resources/static/js/userInsert.js)
 * [회원수정, 회원 권한 변경](https://github.com/buchonsi/kosta_final_project/blob/master/src/main/resources/static/js/userInfo.js)
