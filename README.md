@@ -59,9 +59,9 @@
 
 ## 도메인 (현재 배포 중지)
 <p><관리자></p>
-<p>http://3.36.51.154:8888/admin/adminMain</p>
+<p>http://52.79.38.124:8888/admin/adminMain</p>
 <p><사용자></p>
-<p>http://3.36.51.154:8888/user/userMain</p>
+<p>http://52.79.38.124:8888/user/userMain</p>
 
 ## 목차
 1. 사용자 페이지
