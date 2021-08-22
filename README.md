@@ -57,8 +57,8 @@
 * [회원가입 인증관련](https://github.com/buchonsi/kosta_final_project/blob/master/src/main/resources/static/js/userInsert.js)
 * [회원수정, 회원 권한 변경](https://github.com/buchonsi/kosta_final_project/blob/master/src/main/resources/static/js/userInfo.js)
 
-## 도메인 (현재 배포 중지)
-<p><관리자></p>
+## 도메인
+<p><관리자> - 관리자아이디 필요</p>
 <p>http://52.79.38.124:8888/admin/adminMain</p>
 <p><사용자></p>
 <p>http://52.79.38.124:8888/user/userMain</p>
